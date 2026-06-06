@@ -19,7 +19,7 @@ class TestParenntNode(unittest.TestCase):
             "<div><span><b>grandchild</b></span></div>",
         )
 
-    ef test_to_html_many_children(self):
+    def test_to_html_many_children(self):
         node = ParentNode(
             "p",
             [
