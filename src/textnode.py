@@ -46,9 +46,3 @@ def text_node_to_html_node(text_node: "TextNode") -> LeafNode:
         })
     else:
         raise ValueError(f"invalid text type: {text_node.text_type}")
-
-
-""" 
-    def split_nodes_delimiter(old_nodes: list[TextNode], delimiter: str, text_type: TextType) -> list[TextNode]:
-        new_nodes = []
-        splited = old_nodes.split(delimiter) """
