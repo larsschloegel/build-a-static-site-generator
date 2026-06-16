@@ -1,5 +1,6 @@
 import unittest
 from textnode import TextNode, TextType, text_node_to_html_node
+from inline_markdown import split_nodes_delimiter
 
 
 class TestTextNode(unittest.TestCase):
@@ -13,7 +14,7 @@ class TestTextNode(unittest.TestCase):
         node2 = TextNode("This is a another text node", TextType.ITALIC)
         self.assertNotEqual(node, node2)
 
-    def test_not_eq(self):
+    def test_not_eq_2(self):
         node = TextNode("without url", TextType.BOLD)
         node2 = TextNode("with url", TextType.ITALIC, "https:test.de")
         self.assertNotEqual(node, node2)
@@ -63,9 +64,9 @@ class TestTextNodeToHTMLNode(unittest.TestCase):
         self.assertEqual(html_node.tag, "b")
         self.assertEqual(html_node.value, "This is bold")
 
-    def split_nodes_delimiter(self):
+    def test_split_nodes_delimiter(self):
         node = TextNode("This is text with a `code block` word", TextType.TEXT)
-        new_nodes = self.split_nodes_delimiter([node], "`", TextType.CODE)
+        new_nodes = split_nodes_delimiter([node], "`", TextType.CODE)
 
         result = [
             TextNode("This is text with a ", TextType.TEXT),
