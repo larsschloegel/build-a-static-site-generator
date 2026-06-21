@@ -2,7 +2,7 @@ import unittest
 from htmlnode import HTMLNode
 
 
-class TestHTMLNOde(unittest.TestCase):
+class TestHTMLNode(unittest.TestCase):
     def test_props_to_html(self):
         props = {
             "href": "https://www.google.com",
